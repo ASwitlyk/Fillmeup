@@ -104,8 +104,21 @@ angular.module('Client.controllers', [])
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log('Got pos', pos);
 
+
       var lat = pos.coords.latitude;
       var lng = pos.coords.longitude;
+
+      var userPosition = new google.maps.LatLng(lat, lng);
+
+      var userMarker = new google.maps.Marker({
+        position: userPosition,
+        map: $scope.map,
+        title: 'user',
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10
+        }
+      });
 
       var myPosition = new google.maps.LatLng(lat, lng);
       $scope.map.setCenter(myPosition);
