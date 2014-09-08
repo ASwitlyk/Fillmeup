@@ -114,10 +114,10 @@ angular.module('Client.controllers', [])
         position: userPosition,
         map: $scope.map,
         title: 'user',
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 10
-        }
+        // icon: {
+        //   path: google.maps.SymbolPath.CIRCLE,
+        //   scale: 10
+        // }
       });
 
       var myPosition = new google.maps.LatLng(lat, lng);
